@@ -29,6 +29,8 @@ const characters = [
     },
 ];
 
+
+
 //***MAP***
 //1. Get array of all names
 //2. Get array of all heights
@@ -43,14 +45,51 @@ const characters = [
 
 //***FILTER***
 //1. Get characters with mass greater than 100
-//2. Get characters with height less than 200
-//3. Get all male characters
-//4. Get all female characters
+const massGreater100 = characters.filter(characters => {
+    return characters.mass > 100
+})
 
+console.log(massGreater100);
+
+//2. Get characters with height less than 200
+const heightGreater200 = characters.filter(characters => {
+    return characters.height < 200
+})
+
+console.log(heightGreater200);
+document.getElementById("body").innerHTML = massGreater100;
+//3. Get all male characters
+const male = characters.filter(characters => {
+    return characters.gender === "male"
+})
+
+console.log(male);
+//4. Get all female characters
+const female = characters.filter(characters => {
+    return characters.gender === "female"
+})
+
+console.log(female);
 //***SORT***
 //1. Sort by mass
+const mass = characters.sort((a, b) => {
+ return a.mass - b.mass
+}) 
+
+console.log(mass);
 //2. Sort by height
+const height = characters.sort((a, b) => {
+    return a.height - b.height
+   }) 
+   
+   console.log(height);
 //3. Sort by name
+const byname = characters.sort((a, b) => {
+    if(a.name < b.name) return -1;
+    return 1;
+   }) 
+   
+
 //4. Sort by gender
 
 //***EVERY***
