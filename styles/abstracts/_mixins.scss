@@ -1,0 +1,9 @@
+@mixin before-after-outline {
+    position: absolute;
+        content: "Tame the wild";
+        text-transform: uppercase;
+        font-size: 10rem;
+        font-weight: 700;
+        color: $color-secondary;
+        top: 0;
+}

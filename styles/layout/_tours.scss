@@ -1,0 +1,73 @@
+@use "../abstracts/variables" as *;
+
+@mixin before-after-outline {
+  position: absolute;
+  content: "Tame the wild";
+  text-transform: uppercase;
+  font-size: 10rem;
+  font-weight: 700;
+  color: $color-secondary;
+  bottom: 2rem;
+  white-space: nowrap;
+}
+
+.tours-container {
+  position: relative;
+  height: 600px;
+  width: 100%;
+  background-color: $color-secondary;
+}
+
+.tours__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &::before {
+    @include before-after-outline;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  }
+
+  &::after {
+    @include before-after-outline;
+  }
+  h1 {
+    text-align: center;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 0.2em;
+  }
+  .tours__content-card-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    margin-top: 2rem;
+
+    .tours__content-card {
+      width: 25%;
+      height:20rem;
+      border: 2px solid red;
+
+      &--first {
+        background-image: url("../images/tours/pexels-mirco-violent-blur-4033244.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        overflow: hidden;
+
+        .card-icon-box {
+          position: relative;
+          background-color: $color-primary;
+
+          .card-icon__svg {
+            position: absolute;
+            width: 3.5rem;
+          }
+        }
+    }
+  }
+ }
+}

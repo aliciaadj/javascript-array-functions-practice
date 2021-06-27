@@ -1,0 +1,417 @@
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/jost/Jost-VariableFont_wght.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Jost";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/jost/Jost-Italic-VariableFont_wght.woff2") format("woff2");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  font-family: "Jost", sans-serif;
+}
+
+.container {
+  max-width: 75rem;
+  margin: 0px auto;
+}
+
+/** 1200px oder schmaler */
+/** 992px oder schmaler */
+/** 768px oder schmaler */
+/** 576px oder schmaler */
+/** 2560px oder breiter*/
+/** Breakpoints */
+.header {
+  height: 35rem;
+  min-height: calc(13rem + 32vw);
+  position: relative;
+  overflow: hidden;
+  /** 1200px oder schmaler */
+}
+@media (max-width: 75em) {
+  .header {
+    height: calc(18rem + 32vw);
+  }
+}
+
+.header__slope {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 10vw;
+  z-index: 1;
+  background-image: linear-gradient(-5.71deg, white 49.9%, transparent 50.1%);
+  background-repeat: no-repeat;
+  background-position: center 100%;
+  background-size: 100vw 10vw;
+}
+
+.header__container {
+  position: relative;
+}
+
+.header::before,
+.header::after {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  bottom: -9rem;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+  /** 1200px oder schmaler */
+}
+@media (max-width: 75em) {
+  .header::before,
+.header::after {
+    bottom: -4rem;
+  }
+}
+@media (max-width: 62em) {
+  .header::before,
+.header::after {
+    bottom: -1rem;
+  }
+}
+
+.header::before {
+  top: 0;
+  background-image: url("../images/pexels-benjamin-suter-3617500.jpg");
+}
+@media (max-width: 36em) {
+  .header::before {
+    background-size: cover;
+  }
+}
+
+.header::after {
+  /* ~660 pixel hoch <=> 33vw */
+  height: 33vw;
+  background-image: url("../images/pexels-benjamin-suter-3617500-mountains.webp");
+}
+@media (max-width: 36em) {
+  .header::after {
+    display: none;
+  }
+}
+
+.header__heading-container {
+  clear: both;
+}
+
+.header__heading-main {
+  font-weight: 700;
+  padding-top: 5rem;
+  line-height: 92%;
+  font-size: 7rem;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  animation-name: header__heading-main-font-weight;
+  animation-delay: 0.75s;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+@media (max-width: 62em) {
+  .header__heading-main {
+    font-size: 5rem;
+  }
+}
+@media (max-width: 48em) {
+  .header__heading-main {
+    font-size: 3rem;
+  }
+}
+
+@keyframes header__heading-main-font-weight {
+  0% {
+    opacity: 0;
+    font-weight: 100;
+  }
+  100% {
+    opacity: 1;
+    font-weight: 700;
+  }
+}
+.header__heading-sub {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.25rem;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 0 0 0.5rem black;
+  z-index: 1;
+  position: relative;
+}
+@media (max-width: 48em) {
+  .header__heading-sub {
+    font-size: 1rem;
+  }
+}
+
+.navigation__list-item {
+  list-style-type: none;
+  display: block;
+  float: left;
+}
+@media (max-width: 62em) {
+  .navigation__list-item--mobile-hidden {
+    display: none;
+  }
+}
+.navigation__list-item--menu {
+  float: right;
+  font-size: 3rem;
+}
+
+.navigation__list-item-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 0.25rem 0.25rem 0.25rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: block;
+  text-shadow: 0 0 0.5rem black;
+}
+.navigation__list-item-link:hover {
+  border-bottom: 0.15rem solid #00e29c;
+}
+.navigation__list-item--menu .navigation__list-item-link {
+  margin-top: 0.4rem;
+}
+.navigation__list-item--menu .navigation__list-item-link:hover {
+  border-bottom: none;
+  color: #c8c8c8;
+}
+.navigation__list-item-link--logo {
+  margin-top: 0.9rem;
+}
+.navigation__list-item-link--logo:hover {
+  border-bottom: none;
+  color: #c8c8c8;
+}
+
+.navigation__list-item-logo {
+  width: 4rem;
+  height: 4rem;
+  fill: currentColor;
+}
+
+.motivation-container {
+  position: relative;
+  padding-top: 5rem;
+  width: 80%;
+  margin: 0px auto;
+}
+
+.motivation__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 48em) {
+  .motivation__content {
+    flex-direction: column;
+  }
+}
+.motivation__content .motivation__content-text {
+  align-self: center;
+  width: 35%;
+}
+.motivation__content .motivation__content-text::before {
+  content: "";
+  display: inline-block;
+  background-color: #4aa9bb;
+  width: 2rem;
+  height: 3px;
+}
+.motivation__content .motivation__content-text h1 {
+  margin-top: 0.5rem;
+  white-space: nowrap;
+}
+@media (min-width: 120em) {
+  .motivation__content .motivation__content-text h1 {
+    font-size: 3rem;
+  }
+}
+.motivation__content .motivation__content-text p {
+  margin-top: 0.7rem;
+  margin-bottom: 1rem;
+  width: 12.5rem;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+@media (max-width: 48em) {
+  .motivation__content .motivation__content-text p {
+    width: 100%;
+    padding-bottom: 2rem;
+  }
+}
+@media (min-width: 120em) {
+  .motivation__content .motivation__content-text p {
+    width: 100%;
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+@media (max-width: 48em) {
+  .motivation__content .motivation__content-text {
+    width: 100%;
+  }
+}
+
+.motivation__content-img-box {
+  width: 60%;
+  height: 40vw;
+  max-height: 45rem;
+  position: relative;
+}
+.motivation__content-img-box .motivation__content-img {
+  position: absolute;
+  filter: grayscale(50%);
+  transition: filter 0.5s ease-in-out, transform 0.2s ease-in-out;
+}
+.motivation__content-img-box .motivation__content-img--sunset {
+  width: 40%;
+  z-index: 1;
+  right: 50%;
+  bottom: 20%;
+}
+@media (min-width: 120em) {
+  .motivation__content-img-box .motivation__content-img--sunset {
+    width: 30%;
+  }
+}
+.motivation__content-img-box .motivation__content-img--tree {
+  width: 45%;
+  z-index: 2;
+  right: 20%;
+  bottom: 10%;
+}
+@media (min-width: 120em) {
+  .motivation__content-img-box .motivation__content-img--tree {
+    width: 35%;
+  }
+}
+.motivation__content-img-box .motivation__content-img--sea {
+  width: 80%;
+  top: 0;
+  right: 0;
+}
+@media (min-width: 120em) {
+  .motivation__content-img-box .motivation__content-img--sea {
+    width: 60%;
+  }
+}
+.motivation__content-img-box .motivation__content-img:hover {
+  padding: 0.2rem;
+  border: 0.25rem solid #00e29c;
+  z-index: 3;
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+@media (max-width: 48em) {
+  .motivation__content-img-box {
+    width: 80%;
+    height: 50vw;
+  }
+}
+
+.tours-container {
+  position: relative;
+  height: 600px;
+  width: 100%;
+  background-color: #0d1f23;
+}
+
+.tours__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tours__content::before {
+  position: absolute;
+  content: "Tame the wild";
+  text-transform: uppercase;
+  font-size: 10rem;
+  font-weight: 700;
+  color: #0d1f23;
+  bottom: 2rem;
+  white-space: nowrap;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+}
+.tours__content::after {
+  position: absolute;
+  content: "Tame the wild";
+  text-transform: uppercase;
+  font-size: 10rem;
+  font-weight: 700;
+  color: #0d1f23;
+  bottom: 2rem;
+  white-space: nowrap;
+}
+.tours__content h1 {
+  text-align: center;
+  padding-top: 2.5rem;
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.2em;
+}
+.tours__content .tours__content-card-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%;
+  margin-top: 2rem;
+}
+.tours__content .tours__content-card-box .tours__content-card {
+  width: 25%;
+  height: 20rem;
+  border: 2px solid red;
+}
+.tours__content .tours__content-card-box .tours__content-card--first {
+  background-image: url("../images/tours/pexels-mirco-violent-blur-4033244.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  overflow: hidden;
+}
+.tours__content .tours__content-card-box .tours__content-card--first .card-icon-box {
+  position: relative;
+  background-color: #00e29c;
+}
+.tours__content .tours__content-card-box .tours__content-card--first .card-icon-box .card-icon__svg {
+  position: absolute;
+  width: 3.5rem;
+}
+
+.icon {
+  fill: currentColor;
+  height: 1em;
+  vertical-align: middle;
+  position: relative;
+  top: -0.075em;
+}
+
+/*# sourceMappingURL=main.css.map */
